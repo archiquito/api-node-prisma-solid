@@ -32,6 +32,8 @@ GYMPASS STYLE APP
 - [ ] O usuário deve ser identificado por um JWT (JSON web Token);
 
 
+Aqui está a versão atualizada do `README.md` com a etapa de geração do Prisma Client incluída:
+
 ```markdown
 # Gympass Style App
 
@@ -112,7 +114,17 @@ npx prisma migrate dev
 
 ---
 
-### 5. Execute o servidor
+### 5. Gere o Prisma Client
+
+O Prisma Client é necessário para a aplicação interagir com o banco de dados. Para gerá-lo, execute o seguinte comando:
+
+```bash
+npx prisma generate
+```
+
+---
+
+### 6. Execute o servidor
 
 Inicie o servidor de desenvolvimento:
 
@@ -162,16 +174,8 @@ yarn test
 
 ---
 
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias no projeto.
-
----
-
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ```
-
-Essa versão inclui as instruções sobre a utilização do Docker para rodar o ambiente de desenvolvimento. Se precisar de mais ajustes ou detalhes, é só avisar!
