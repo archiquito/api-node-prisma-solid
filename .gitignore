@@ -1,0 +1,5 @@
+node_modules
+buid
+dist
+src/generated/*
+coverage
