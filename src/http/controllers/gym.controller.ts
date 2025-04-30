@@ -1,7 +1,7 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
 import { ResourceNotFoundError } from '../../errors/resource-not-found-error';
-import { makeCreateNewGym } from '../../factories/make-gym';
+import { makeCreateNewGym } from '../../factories/make-create-new-gym';
 
 export async function checkin(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({

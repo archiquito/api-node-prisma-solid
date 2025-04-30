@@ -3,7 +3,7 @@ import { InMemoryCheckinRepository } from '../../repositories/in-memory/in-memor
 import { CheckInService } from './checkin';
 import { CheckInError } from '../../errors/checkin-error';
 import { InMemoryGymRepository } from '../../repositories/in-memory/in-memory-gym-repository';
-import { Decimal } from '../../generated/prisma/runtime/library';
+import { Prisma } from '../../generated/prisma';
 import { MaxDistanceError } from '../../errors/max-distance-error';
 
 let checkInsRepository: InMemoryCheckinRepository;
@@ -21,8 +21,8 @@ describe('Service User CheckIns', () => {
       title: 'Javascript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(-23.5337923),
-      longitude: new Decimal(-47.579136),
+      latitude: new Prisma.Decimal(-23.5337923),
+      longitude: new Prisma.Decimal(-47.579136),
     });
 
     vi.useFakeTimers();
@@ -89,8 +89,8 @@ describe('Service User CheckIns', () => {
       title: 'Javascript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(-23.5097892),
-      longitude: new Decimal(-47.5311996),
+      latitude: new Prisma.Decimal(-23.5097892),
+      longitude: new Prisma.Decimal(-47.5311996),
     });
 
     await expect(() =>

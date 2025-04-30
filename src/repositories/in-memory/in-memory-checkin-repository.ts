@@ -44,4 +44,32 @@ export class InMemoryCheckinRepository implements CheckInRepository {
 
     return historyCheckins;
   }
+
+  async countCheckinsByUserId(userId: string) {
+    const countCheckins = this.itens.filter(
+      (item) => item.user_id === userId,
+    ).length;
+
+    return countCheckins;
+  }
+
+  async findById(checkinId: string) {
+    const checkin = this.itens.find((item) => item.id === checkinId);
+
+    if (!checkin) {
+      return null;
+    }
+
+    return checkin;
+  }
+
+  async save(checkIn: CheckIn) {
+    const checkInIndex = this.itens.findIndex((item) => item.id === checkIn.id);
+
+    if (checkInIndex >= 0) {
+      this.itens[checkInIndex] = checkIn;
+    }
+
+    return checkIn;
+  }
 }
