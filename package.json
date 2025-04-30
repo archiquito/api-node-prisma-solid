@@ -8,7 +8,8 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "lint": "eslint src --ext .ts --fix",
-    "test": "vitest run",
+    "test": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e",
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
