@@ -20,12 +20,14 @@ export async function createCheckin(
 
   const gym = makeCheckIn();
 
-  await gym.execute({
+  const { checkIn } = await gym.execute({
     gymId,
     userId: request.user.sub,
     userLatitude: latitude,
     userLongitude: longitude,
   });
 
-  return reply.status(201).send();
+  return reply.status(201).send({
+    checkIn,
+  });
 }

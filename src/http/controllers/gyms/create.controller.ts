@@ -14,9 +14,9 @@ export async function createGyms(request: FastifyRequest, reply: FastifyReply) {
   const { title, description, phone, latitude, longitude } =
     registerBodySchema.parse(request.body);
 
-  const gym = makeCreateNewGym();
+  const createNewGym = makeCreateNewGym();
 
-  await gym.execute({
+  const { gym } = await createNewGym.execute({
     title,
     description,
     phone,
@@ -24,5 +24,7 @@ export async function createGyms(request: FastifyRequest, reply: FastifyReply) {
     longitude,
   });
 
-  return reply.status(201).send();
+  return reply.status(201).send({
+    gym,
+  });
 }
