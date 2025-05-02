@@ -21,6 +21,7 @@ export default <Environment>{
   async setup() {
     const schema = randomUUID();
     const databaseUrl = generateDataBaseUrl(schema);
+    console.log(databaseUrl);
 
     process.env.DATABASE_URL = databaseUrl;
 
@@ -28,7 +29,6 @@ export default <Environment>{
 
     return {
       async teardown() {
-
         await prisma.$executeRawUnsafe(
           `DROP SCHEMA IF EXISTS "${schema}" CASCADE`,
         );

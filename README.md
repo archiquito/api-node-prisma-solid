@@ -29,7 +29,7 @@ GYMPASS STYLE APP
 - [x] A senha do usuário precisa estar criptografada;
 - [x] Os dados da aplicação precisam estar persistido em um BD PostgreSQL;
 - [x] Todas listas de dados precisam estar paginadas com 20 items por página;
-- [ ] O usuário deve ser identificado por um JWT (JSON web Token);
+- [x] O usuário deve ser identificado por um JWT (JSON web Token);
 
 
 Aqui está a versão atualizada do `README.md` com a etapa de geração do Prisma Client incluída:

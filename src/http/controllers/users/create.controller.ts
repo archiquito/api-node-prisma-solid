@@ -1,7 +1,7 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
-import { ErrorUserEmailExists } from '../../errors/error.user-email-exists';
-import { makeCreateNewUser } from '../../factories/make-create-new-user';
+import { ErrorUserEmailExists } from '../../../errors/error.user-email-exists';
+import { makeCreateNewUser } from '../../../factories/make-create-new-user';
 
 export async function createUsers(
   request: FastifyRequest,
