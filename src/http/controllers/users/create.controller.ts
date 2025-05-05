@@ -18,10 +18,13 @@ export async function createUsers(
   try {
     const createNewUser = makeCreateNewUser();
 
-    await createNewUser.execute({
+    const { user } = await createNewUser.execute({
       name,
       email,
       password,
+    });
+    return reply.status(201).send({
+      user,
     });
   } catch (err) {
     if (err instanceof ErrorUserEmailExists) {
@@ -31,6 +34,4 @@ export async function createUsers(
     }
     throw err;
   }
-
-  return reply.status(201).send();
 }

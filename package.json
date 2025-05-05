@@ -10,6 +10,7 @@
     "lint": "eslint src --ext .ts --fix",
     "test": "vitest run --project unit",
     "test:e2e": "vitest run --project e2e",
+    "test:e2e:watch": "vitest --dir src/http",
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [],

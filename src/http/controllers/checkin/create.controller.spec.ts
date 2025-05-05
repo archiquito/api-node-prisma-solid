@@ -13,7 +13,7 @@ describe('Create CheckIn (e2e)', () => {
   });
 
   it('should be able to create CheckIn', async () => {
-    const { token } = await createAndAuthUser(app);
+    const { token } = await createAndAuthUser(app, true);
 
     const gymResponse = await request(app.server)
       .post('/gyms')

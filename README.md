@@ -21,8 +21,8 @@ GYMPASS STYLE APP
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
 - [x] O check-in só pode ser validado até 20 min. após criado;
-- [ ] O check-in só pode ser validado por adminstradores;
-- [ ] A academia só pode ser cadastrado por administradores;
+- [x] O check-in só pode ser validado por adminstradores;
+- [x] A academia só pode ser cadastrado por administradores;
 
 ## RNFs (Requisitos não-funcionais)
 

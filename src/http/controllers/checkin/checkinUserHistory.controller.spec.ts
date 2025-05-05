@@ -15,7 +15,7 @@ describe('History CheckIns (e2e)', () => {
   });
 
   it('should be able to get list history CheckIn by UserId', async () => {
-    const { token } = await createAndAuthUser(app);
+    const { token } = await createAndAuthUser(app, true);
 
     const gym = await request(app.server)
       .post('/gyms')
