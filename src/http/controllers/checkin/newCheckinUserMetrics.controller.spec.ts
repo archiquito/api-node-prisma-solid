@@ -1,10 +1,10 @@
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import request from 'supertest';
 import { app } from '../../../app';
 import { createAndAuthUser } from '../../../utils/tests/createAndAuthuser';
 import { prisma } from '../../../lib/prisma';
 
-describe('History CheckIns (e2e)', () => {
+describe('user Metrics CheckIns (e2e)', () => {
   beforeAll(async () => {
     await app.ready();
   });
@@ -13,7 +13,7 @@ describe('History CheckIns (e2e)', () => {
     await app.close();
   });
 
-  it('should be able to get list history CheckIn by UserId', async () => {
+  it('should be able to get list metrics CheckIn by UserId', async () => {
     const { token } = await createAndAuthUser(app, true);
 
     const user = await prisma.user.findFirstOrThrow();
@@ -21,6 +21,8 @@ describe('History CheckIns (e2e)', () => {
     const gym = await prisma.gym.create({
       data: {
         title: 'JavaScript Gym',
+        description: null,
+        phone: null,
         latitude: -27.2092052,
         longitude: -49.6401091,
       },
@@ -40,20 +42,11 @@ describe('History CheckIns (e2e)', () => {
     });
 
     const response = await request(app.server)
-      .get('/checkin/history')
+      .get('/checkin/metrics')
       .set('Authorization', `Bearer ${token}`)
       .send();
 
     expect(response.statusCode).toEqual(200);
-    expect(response.body.historyCheckins).toEqual([
-      expect.objectContaining({
-        gymId: gym.id,
-        user_id: user.id,
-      }),
-      expect.objectContaining({
-        gymId: gym.id,
-        user_id: user.id,
-      }),
-    ]);
+    expect(response.body.countCheckins).toEqual(2);
   });
 });

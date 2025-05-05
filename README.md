@@ -32,8 +32,6 @@ GYMPASS STYLE APP
 - [x] O usuário deve ser identificado por um JWT (JSON web Token);
 
 
-Aqui está a versão atualizada do `README.md` com a etapa de geração do Prisma Client incluída:
-
 ```markdown
 # Gympass Style App
 
