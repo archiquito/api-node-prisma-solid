@@ -9,7 +9,6 @@ jobs:
 
     services:
       postgres:
-        api-solid-pg:
         image: bitnami/postgresql
         ports:
           - 5432:5432
