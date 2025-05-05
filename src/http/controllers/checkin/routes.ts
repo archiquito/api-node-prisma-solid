@@ -2,8 +2,8 @@ import { FastifyInstance } from 'fastify';
 import { verifyJwt } from '../../middlewares/verifyJwt';
 import { createCheckin } from './create.controller';
 import { checkinHistory } from './checkinUserHistory.controller';
-import { checkinMetrics } from './checkinUserMetrics.controller';
 import { validateCheckin } from './validateCheckin.controller';
+import { checkinMetrics } from './checkinUserMetrics.controller';
 import { verifyUserRole } from '../../middlewares/verifyUserRole';
 
 export async function checkInRoutes(app: FastifyInstance) {
