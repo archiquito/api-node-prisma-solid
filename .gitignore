@@ -3,3 +3,4 @@ buid
 dist
 src/generated/*
 coverage
+.env
